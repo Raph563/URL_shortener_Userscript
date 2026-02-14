@@ -7,6 +7,17 @@
     "storage",
     "tabs",
     "clipboardWrite",
+  "manifest_version": 3,
+  "name": "Firefox URL Shortener Hub",
+  "version": "1.0.0",
+  "description": "Raccourcir l'URL de l'onglet actif depuis un bouton natif Firefox.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
     "https://api-ssl.bitly.com/*",
     "https://api.tinyurl.com/*",
     "https://api.rebrandly.com/*",
