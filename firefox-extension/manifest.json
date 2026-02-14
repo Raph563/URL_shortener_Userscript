@@ -1,25 +1,37 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Firefox URL Shortener Hub",
-  "version": "1.0.0",
-  "description": "Raccourcir l'URL de l'onglet actif depuis un bouton natif Firefox.",
+  "version": "1.2.0",
+  "description": "Raccourcir l'URL de l'onglet actif depuis une icone dans la barre d'adresse Firefox.",
+  "icons": {
+    "48": "assets/brand/shortener.svg",
+    "96": "assets/brand/shortener.svg"
+  },
   "permissions": [
     "storage",
     "tabs",
     "activeTab",
-    "clipboardWrite"
-  ],
-  "host_permissions": [
+    "clipboardWrite",
     "https://api-ssl.bitly.com/*",
     "https://api.tinyurl.com/*",
     "https://api.rebrandly.com/*",
     "https://is.gd/*",
     "https://v.gd/*",
-    "<all_urls>"
+    "<all_urls>",
+    "https://quickchart.io/*"
   ],
-  "action": {
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "page_action": {
     "default_title": "URL Shortener",
-    "default_popup": "popup/popup.html"
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/brand/shortener.svg",
+      "32": "assets/brand/shortener.svg"
+    }
   },
   "options_ui": {
     "page": "options/options.html",

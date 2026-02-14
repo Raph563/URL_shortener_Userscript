@@ -9,35 +9,59 @@
 <body>
   <main class="card">
     <header class="header">
-      <h1>URL Shortener</h1>
-      <button id="openOptions" class="ghost" title="Paramètres">⚙</button>
+      <div class="brand">
+        <img src="../assets/brand/shortener.svg" alt="URL Shortener" class="brand-icon" />
+        <div>
+          <h1>Shortener Hub</h1>
+          <p class="muted">Selection automatique: payants puis gratuits</p>
+        </div>
+      </div>
+      <button id="openOptions" class="ghost" title="Parametres">Options</button>
     </header>
 
-    <label for="longUrl">URL de l'onglet actif</label>
-    <input id="longUrl" type="url" placeholder="https://..." />
+    <nav class="tabs">
+      <button id="tabShorten" class="tab-btn active" type="button">Raccourcir</button>
+      <button id="tabHistory" class="tab-btn" type="button">Historique</button>
+    </nav>
 
-    <label for="service">Service</label>
-    <select id="service">
-      <option value="bitly">Bitly</option>
-      <option value="tinyurl">TinyURL</option>
-      <option value="rebrandly">Rebrandly</option>
-      <option value="isgd">is.gd</option>
-      <option value="vgd">v.gd</option>
-    </select>
-
-    <button id="shortenBtn" class="primary">Raccourcir</button>
-
-    <section id="resultSection" class="result hidden">
-      <label for="shortUrl">URL raccourcie</label>
-      <input id="shortUrl" readonly />
-      <div class="row">
-        <button id="copyBtn">Copier</button>
-        <button id="expandBtn">Afficher URL finale</button>
+    <section id="shortenPanel" class="panel active">
+      <div class="switch-row">
+        <span>Mode auto</span>
+        <label class="switch">
+          <input id="autoModeToggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
       </div>
-      <p id="expandedText" class="small"></p>
+
+      <label for="longUrl">URL de l'onglet actif</label>
+      <input id="longUrl" type="url" placeholder="https://..." />
+
+      <button id="shortenBtn" class="primary">Raccourcir</button>
+
+      <section id="resultSection" class="result hidden">
+        <label for="shortUrl">URL raccourcie</label>
+        <input id="shortUrl" readonly />
+        <p id="usedService" class="small"></p>
+        <div class="row">
+          <button id="copyBtn" type="button">Copier</button>
+          <button id="expandBtn" type="button">Afficher URL finale</button>
+        </div>
+        <p id="expandedText" class="small"></p>
+      </section>
+
+      <section class="qr-wrap">
+        <p class="label-lite">QR code URL originale</p>
+        <div class="qr-box">
+          <img id="qrImage" alt="QR code URL originale" />
+        </div>
+      </section>
+
+      <p id="message" class="small"></p>
     </section>
 
-    <p id="message" class="small"></p>
+    <section id="historyPanel" class="panel">
+      <ul id="historyList" class="history-list"></ul>
+    </section>
   </main>
 
   <script type="module" src="popup.js"></script>

@@ -3,34 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Paramètres URL Shortener</title>
+  <title>Parametres URL Shortener</title>
   <link rel="stylesheet" href="options.css" />
 </head>
 <body>
   <main class="container">
-    <h1>Paramètres API</h1>
-    <p>Configure les tokens pour les services qui en ont besoin.</p>
+    <header class="page-header">
+      <img src="../assets/brand/shortener.svg" alt="Shortener" class="logo" />
+      <div>
+        <h1>Parametres</h1>
+        <p>Configure les APIs payantes et la priorite des services automatiques.</p>
+      </div>
+    </header>
 
-    <label for="bitlyToken">Bitly token</label>
-    <input id="bitlyToken" type="text" />
+    <section class="panel">
+      <h2>Tokens API necessaires</h2>
 
-    <label for="tinyUrlToken">TinyURL token</label>
-    <input id="tinyUrlToken" type="text" />
+      <label for="bitlyToken">Bitly token</label>
+      <input id="bitlyToken" type="text" />
 
-    <label for="rebrandlyToken">Rebrandly token</label>
-    <input id="rebrandlyToken" type="text" />
+      <label for="tinyUrlToken">TinyURL token</label>
+      <input id="tinyUrlToken" type="text" />
 
-    <label for="rebrandlyDomain">Domaine Rebrandly (optionnel)</label>
-    <input id="rebrandlyDomain" type="text" placeholder="rebrand.ly" />
+      <label for="rebrandlyToken">Rebrandly token</label>
+      <input id="rebrandlyToken" type="text" />
+
+      <label for="rebrandlyDomain">Domaine Rebrandly (optionnel)</label>
+      <input id="rebrandlyDomain" type="text" placeholder="rebrand.ly" />
+    </section>
+
+    <section class="panel">
+      <h2>Priorite des services</h2>
+      <p>Le mode auto essaie d'abord les services payants actifs puis les gratuits actifs, selon cet ordre.</p>
+      <ul id="serviceOrderList" class="order-list"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Liens API</h2>
+      <div id="apiLinks" class="link-grid"></div>
+    </section>
 
     <div class="actions">
       <button id="saveBtn">Enregistrer</button>
+      <p id="message"></p>
     </div>
-
-    <h2>Historique récent</h2>
-    <ul id="historyList"></ul>
-
-    <p id="message"></p>
   </main>
 
   <script type="module" src="options.js"></script>

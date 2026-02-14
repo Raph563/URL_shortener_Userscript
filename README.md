@@ -1,42 +1,43 @@
 # URL_shortener_Userscript
 
-Ce dépôt fournit maintenant une **vraie extension Firefox (WebExtension)** pour avoir un bouton dans l’interface du navigateur, utilisable sur toutes les pages web.
+Extension Firefox URL Shortener Hub.
 
-## ✅ Ce que fait l’extension
+## Fonctions
 
-- Ajoute un bouton natif **URL Shortener** dans la barre d’outils Firefox.
-- Ouvre un popup quand tu cliques dessus.
-- Pré-remplit automatiquement l’URL de l’onglet actif (celle de ta barre d’URL).
-- Raccourcit via : **Bitly**, **TinyURL**, **Rebrandly**, **is.gd**, **v.gd**.
-- Permet de copier l’URL courte et d’afficher l’URL finale.
-- Inclut une page de paramètres pour les clés API + un historique local.
+- Petite icone dans la barre d'adresse (page action).
+- Raccourcissement automatique des URL: services payants d'abord, puis gratuits.
+- Mode auto (interrupteur dans le popup): au prochain clic, l'URL active est raccourcie automatiquement.
+- Generation d'un QR code de l'URL originale.
+- Onglet Historique dans le popup avec:
+  - URL d'origine
+  - URL raccourcie
+  - favicon du site
+  - miniature screenshot de la page
+- Page Options pour:
+  - renseigner les APIs necessaires: Bitly, TinyURL, Rebrandly
+  - activer/desactiver des services
+  - gerer l'ordre de priorite (haut/bas)
 
-## Dossier extension
+## Services
 
-- `firefox-extension/manifest.json`
-- `firefox-extension/popup/*`
-- `firefox-extension/options/*`
+- Payants: Bitly, TinyURL, Rebrandly
+- Gratuits: is.gd, v.gd
 
-## Installation dans Firefox (mode développeur)
+Si un service payant n'a pas de token configure, il est ignore automatiquement.
 
-1. Ouvre Firefox puis va sur `about:debugging#/runtime/this-firefox`.
-2. Clique **Charger un module complémentaire temporaire**.
-3. Sélectionne le fichier :
-   - `firefox-extension/manifest.json`
-4. L’icône de l’extension apparaît dans la barre d’outils.
-5. Clique dessus pour raccourcir l’URL de l’onglet actuel.
+## Liens API
 
-## Paramètres API
+- Bitly: <https://dev.bitly.com/>
+- TinyURL: <https://tinyurl.com/app/dev>
+- Rebrandly: <https://developers.rebrandly.com/>
 
-Dans le popup, clique sur ⚙ pour ouvrir la page options, puis renseigne les tokens :
+## Sources d'icones
 
-- Bitly token
-- TinyURL token
-- Rebrandly token
-- Domaine Rebrandly (optionnel)
+- Simple Icons: <https://simpleicons.org/>
+- Tabler Icons: <https://tabler-icons.io/>
 
-## Notes
+## Installation (temporaire)
 
-- Bitly, TinyURL et Rebrandly nécessitent un token API.
-- is.gd et v.gd fonctionnent sans token.
-- Le chargement "temporaire" disparaît au redémarrage de Firefox ; pour usage permanent, il faut empaqueter/signer l’extension.
+1. Ouvre `about:debugging#/runtime/this-firefox`.
+2. Clique **Charger un module complementaire temporaire**.
+3. Selectionne `firefox-extension/manifest.json`.
