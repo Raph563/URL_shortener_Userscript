@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paramètres URL Shortener</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="panel">
+      <h1>Paramètres API</h1>
+      <p>Configure tes tokens API pour les services premium.</p>
+
+      <label for="bitlyToken">Bitly token</label>
+      <input id="bitlyToken" type="text" />
+      <a class="help" href="https://dev.bitly.com/" target="_blank" rel="noreferrer">Obtenir une clé Bitly</a>
+
+      <label for="tinyUrlToken">TinyURL token</label>
+      <input id="tinyUrlToken" type="text" />
+      <a class="help" href="https://tinyurl.com/app/dev" target="_blank" rel="noreferrer">Obtenir une clé TinyURL</a>
+
+      <label for="rebrandlyToken">Rebrandly token</label>
+      <input id="rebrandlyToken" type="text" />
+      <a class="help" href="https://developers.rebrandly.com/docs" target="_blank" rel="noreferrer">Obtenir une clé Rebrandly</a>
+
+      <label for="rebrandlyDomain">Domaine Rebrandly (optionnel)</label>
+      <input id="rebrandlyDomain" type="text" placeholder="rebrand.ly" />
+
+      <div class="actions">
+        <button id="saveBtn">Enregistrer</button>
+      </div>
+      <p id="message"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Historique récent</h2>
+      <ul id="historyList"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Icônes développeur recommandées</h2>
+      <ul>
+        <li><a href="https://fonts.google.com/icons" target="_blank" rel="noreferrer">Google Material Icons</a></li>
+        <li><a href="https://heroicons.com/" target="_blank" rel="noreferrer">Heroicons</a></li>
+        <li><a href="https://fontawesome.com/icons" target="_blank" rel="noreferrer">Font Awesome</a></li>
+        <li><a href="https://tabler.io/icons" target="_blank" rel="noreferrer">Tabler Icons</a></li>
+      </ul>
+      <p>Place tes icônes dans <code>firefox-extension/icons/</code> et mets à jour <code>manifest.json</code>.</p>
+    </section>
+  </main>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f4f7ff 0%, #eef1fa 100%);
+}
+.card {
+  width: 380px;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #dbe0ef;
+  border-radius: 14px;
+  margin: 6px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(20, 36, 80, 0.12);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+h1 { margin: 0; font-size: 16px; }
+.subtitle { margin: 2px 0 0; font-size: 11px; color: #67708a; }
+label { display: block; font-size: 12px; margin: 8px 0 4px; color: #3e4761; }
+input, select, button {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #c7cfe4;
+  padding: 9px;
+  font-size: 13px;
+}
+input:focus, select:focus {
+  outline: 2px solid #bfd3ff;
+  border-color: #769ef6;
+}
+button { cursor: pointer; background: #eef2fb; }
+.primary {
+  margin-top: 26px;
+  background: linear-gradient(90deg, #0059d6, #0072ff);
+  color: #fff;
+  border: none;
+}
+.ghost {
+  width: auto;
+  padding: 5px 8px;
+  border-radius: 8px;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 126px;
+  gap: 8px;
+}
+.row { display: flex; gap: 6px; margin-top: 8px; }
+.small { font-size: 12px; margin: 8px 0 0; color: #4a4f57; min-height: 14px; }
+.result {
+  margin-top: 10px;
+  border: 1px solid #e5e9f6;
+  border-radius: 10px;
+  padding: 9px;
+  background: #fafcff;
+}
+.links {
+  margin-top: 10px;
+  border-top: 1px dashed #d8dfef;
+  padding-top: 8px;
+}
+.links summary { cursor: pointer; color: #2f4d88; font-size: 12px; }
+.links ul { margin: 8px 0 0; padding-left: 16px; max-height: 120px; overflow: auto; }
+.links li { margin: 4px 0; font-size: 12px; }
+.links a { color: #1647a0; text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+.hidden { display: none; }
+#message[data-type="error"] { color: #bb0029; }
+#message[data-type="success"] { color: #0b6b12; }
+#message[data-type="info"] { color: #425177; }
