@@ -60,7 +60,8 @@ async function renderHistory() {
 
   history.slice(0, 20).forEach((item) => {
     const li = document.createElement('li');
-    li.innerHTML = `<strong>${escapeHtml(item.service || 'Service')}</strong> — <a href="${escapeHtml(item.shortUrl || '#')}" target="_blank" rel="noreferrer">${escapeHtml(item.shortUrl || '')}</a>`;
+    const date = item.createdAt ? new Date(item.createdAt).toLocaleString('fr-FR') : '';
+    li.innerHTML = `<strong>${escapeHtml(item.service || 'Service')}</strong> — <a href="${escapeHtml(item.shortUrl || '#')}" target="_blank" rel="noreferrer">${escapeHtml(item.shortUrl || '')}</a>${date ? ` <em>(${escapeHtml(date)})</em>` : ''}`;
     historyList.appendChild(li);
   });
 }
@@ -73,3 +74,11 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
+
+
+document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+  link.addEventListener('click', async (event) => {
+    event.preventDefault();
+    await browser.tabs.create({ url: link.href });
+  });
+});

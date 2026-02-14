@@ -112,6 +112,20 @@ async function init() {
   });
   ui.expandBtn.addEventListener('click', onExpand);
   ui.openOptions.addEventListener('click', () => browser.runtime.openOptionsPage());
+
+  document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    link.addEventListener('click', async (event) => {
+      event.preventDefault();
+      await browser.tabs.create({ url: link.href });
+    });
+  });
+
+  browser.storage.onChanged.addListener(async (changes, areaName) => {
+    if (areaName === 'sync' && changes[KEYS.settings]) {
+      settingsCache = await loadSettings();
+      setMessage('Paramètres rechargés.', 'info');
+    }
+  });
 }
 
 async function onShorten() {

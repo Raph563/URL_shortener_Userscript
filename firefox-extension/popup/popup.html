@@ -9,23 +9,29 @@
 <body>
   <main class="card">
     <header class="header">
-      <h1>URL Shortener</h1>
+      <div>
+        <h1>URL Shortener</h1>
+        <p class="subtitle">Icône dans la barre d’URL Firefox</p>
+      </div>
       <button id="openOptions" class="ghost" title="Paramètres">⚙</button>
     </header>
 
-    <label for="longUrl">URL de l'onglet actif</label>
+    <label for="longUrl">URL active</label>
     <input id="longUrl" type="url" placeholder="https://..." />
 
-    <label for="service">Service</label>
-    <select id="service">
-      <option value="bitly">Bitly</option>
-      <option value="tinyurl">TinyURL</option>
-      <option value="rebrandly">Rebrandly</option>
-      <option value="isgd">is.gd</option>
-      <option value="vgd">v.gd</option>
-    </select>
-
-    <button id="shortenBtn" class="primary">Raccourcir</button>
+    <div class="split">
+      <div>
+        <label for="service">Service</label>
+        <select id="service">
+          <option value="bitly">Bitly</option>
+          <option value="tinyurl">TinyURL</option>
+          <option value="rebrandly">Rebrandly</option>
+          <option value="isgd">is.gd</option>
+          <option value="vgd">v.gd</option>
+        </select>
+      </div>
+      <button id="shortenBtn" class="primary">Raccourcir</button>
+    </div>
 
     <section id="resultSection" class="result hidden">
       <label for="shortUrl">URL raccourcie</label>
@@ -36,6 +42,20 @@
       </div>
       <p id="expandedText" class="small"></p>
     </section>
+
+    <details class="links">
+      <summary>Liens API & icônes</summary>
+      <ul>
+        <li><a href="https://dev.bitly.com/" target="_blank" rel="noreferrer">Bitly API</a></li>
+        <li><a href="https://tinyurl.com/app/dev" target="_blank" rel="noreferrer">TinyURL API</a></li>
+        <li><a href="https://developers.rebrandly.com/docs" target="_blank" rel="noreferrer">Rebrandly API</a></li>
+        <li><a href="https://is.gd/apishorteningreference.php" target="_blank" rel="noreferrer">is.gd API</a></li>
+        <li><a href="https://v.gd/apishorteningreference.php" target="_blank" rel="noreferrer">v.gd API</a></li>
+        <li><a href="https://fonts.google.com/icons" target="_blank" rel="noreferrer">Google Material Icons</a></li>
+        <li><a href="https://heroicons.com/" target="_blank" rel="noreferrer">Heroicons</a></li>
+        <li><a href="https://fontawesome.com/icons" target="_blank" rel="noreferrer">Font Awesome</a></li>
+      </ul>
+    </details>
 
     <p id="message" class="small"></p>
   </main>
