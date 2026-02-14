@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paramètres URL Shortener</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Paramètres API</h1>
+    <p>Configure les tokens pour les services qui en ont besoin.</p>
+
+    <label for="bitlyToken">Bitly token</label>
+    <input id="bitlyToken" type="text" />
+
+    <label for="tinyUrlToken">TinyURL token</label>
+    <input id="tinyUrlToken" type="text" />
+
+    <label for="rebrandlyToken">Rebrandly token</label>
+    <input id="rebrandlyToken" type="text" />
+
+    <label for="rebrandlyDomain">Domaine Rebrandly (optionnel)</label>
+    <input id="rebrandlyDomain" type="text" placeholder="rebrand.ly" />
+
+    <div class="actions">
+      <button id="saveBtn">Enregistrer</button>
+    </div>
+
+    <h2>Historique récent</h2>
+    <ul id="historyList"></ul>
+
+    <p id="message"></p>
+  </main>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

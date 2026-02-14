@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="card">
+    <header class="header">
+      <h1>URL Shortener</h1>
+      <button id="openOptions" class="ghost" title="Paramètres">⚙</button>
+    </header>
+
+    <label for="longUrl">URL de l'onglet actif</label>
+    <input id="longUrl" type="url" placeholder="https://..." />
+
+    <label for="service">Service</label>
+    <select id="service">
+      <option value="bitly">Bitly</option>
+      <option value="tinyurl">TinyURL</option>
+      <option value="rebrandly">Rebrandly</option>
+      <option value="isgd">is.gd</option>
+      <option value="vgd">v.gd</option>
+    </select>
+
+    <button id="shortenBtn" class="primary">Raccourcir</button>
+
+    <section id="resultSection" class="result hidden">
+      <label for="shortUrl">URL raccourcie</label>
+      <input id="shortUrl" readonly />
+      <div class="row">
+        <button id="copyBtn">Copier</button>
+        <button id="expandBtn">Afficher URL finale</button>
+      </div>
+      <p id="expandedText" class="small"></p>
+    </section>
+
+    <p id="message" class="small"></p>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
