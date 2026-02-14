@@ -1,0 +1,47 @@
+body {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: #f7f7fb;
+  margin: 0;
+}
+.container {
+  max-width: 760px;
+  margin: 24px auto;
+  background: #fff;
+  border: 1px solid #dde0ee;
+  border-radius: 12px;
+  padding: 20px;
+}
+label {
+  display: block;
+  margin: 12px 0 4px;
+  font-size: 14px;
+}
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px;
+  border: 1px solid #ccd0df;
+  border-radius: 8px;
+}
+button {
+  background: #0060df;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  cursor: pointer;
+}
+.actions {
+  margin-top: 14px;
+}
+#historyList {
+  margin: 0;
+  padding-left: 18px;
+}
+#historyList li {
+  margin: 6px 0;
+}
+#message {
+  margin-top: 12px;
+  color: #2f6f00;
+}
